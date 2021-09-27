@@ -1,23 +1,33 @@
-import logo from './logo.svg';
+import React, {useEffect, useState} from 'react';
 import './App.css';
 
+const TEXT = "Hello, I'm Osama and I develop web application!";
+const TEXT_SIZE = TEXT.length;
+
 function App() {
+
+  const [textIndex, setTextIndex] = useState(0);
+  const [text, setText] = useState('');
+
+  useEffect(() => {
+    setTimeout(typeText, 100);
+  })
+  
+  function typeText(){
+    if (textIndex === TEXT_SIZE + 1) return;
+    else {
+      if (textIndex === TEXT_SIZE) 
+        setText(TEXT.substring(0, textIndex));
+      else 
+        setText(TEXT.substring(0, textIndex) + "_");
+
+      setTextIndex(textIndex + 1);
+    }
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div onChange={typeText}>{text}{(textIndex === TEXT_SIZE + 1)?<span>_</span>:''}</div>
     </div>
   );
 }

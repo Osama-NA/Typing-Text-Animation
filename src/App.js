@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import './App.css';
 
-const TEXT = "Hello, I'm Osama and I develop web application!";
+const TEXT = "Hello, I'm Osama and I develop web applications!";
 const TEXT_SIZE = TEXT.length;
 
 function App() {

@@ -25,9 +25,14 @@ function App() {
     }
   }
 
+  const typingCompleted = () => textIndex === TEXT_SIZE + 1;
+
   return (
     <div className="App">
-      <div onChange={typeText}>{text}{(textIndex === TEXT_SIZE + 1)?<span>_</span>:''}</div>
+      <div onChange={typeText}>
+        {text}
+        <span>{typingCompleted() ? '_' : ''}</span>
+      </div>
     </div>
   );
 }

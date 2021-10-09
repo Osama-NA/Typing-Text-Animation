@@ -11,13 +11,13 @@ body{
   justify-content: center;
   align-items: center;
 }
+
 @keyframes toggleCursor{
   0%{
     opacity: 0;
   }
 }
 span{
-  animation-name: toggleCursor;
   animation-duration: 1s;
   animation-iteration-count: infinite;
   animation-timing-function: ease;
